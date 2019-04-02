@@ -71,7 +71,7 @@ public class WorldScript : MonoBehaviour
 
     void frameAnimation ()
     {
-        //change check weather or not the size should change.
+        //change check wether or not the size should change.
         var change = false;
         var timerFloat = initialTime - Time.time;
         ballFrame.transform.Rotate(Vector3.forward * 0.1f);
