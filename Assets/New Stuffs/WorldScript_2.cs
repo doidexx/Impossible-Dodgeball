@@ -22,7 +22,18 @@ public class WorldScript_2: MonoBehaviour
     float timer = 0;// Serialized for debugging purposes.
     public float Timer { get { return timer; } }
 
+    [Header("Screen Managment")]
+    [SerializeField]
+    Canvas canvas;
+    [SerializeField]
+    GameObject[] Screens;
+
     bool letTimerRun = false;
+
+    private void Start()
+    {
+        OpenScreen(0);
+    }
 
     private void Update()
     {
@@ -37,5 +48,14 @@ public class WorldScript_2: MonoBehaviour
     void ResetTimer(bool reset)
     {
         timer = 0;
+    }
+
+    public void OpenScreen(int activate)
+    {
+        foreach (GameObject s in Screens)
+        {
+            s.SetActive(false);
+        }
+        Screens[activate].SetActive(true);
     }
 }
