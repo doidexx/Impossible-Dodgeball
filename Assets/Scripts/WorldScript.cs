@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class WorldScript : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField]
     Image ballFrame;
     [SerializeField]
@@ -18,11 +19,12 @@ public class WorldScript : MonoBehaviour
 
     [SerializeField]
     GameObject gameUI;
+    
+    [Header("Player Models")]
     [SerializeField]
-    GameObject player;
-    [SerializeField]
-    GameObject player1;
+    GameObject[] models;
 
+    [Header("")]
     [SerializeField]
     Vector3 normalSize;
     [SerializeField]
@@ -30,8 +32,6 @@ public class WorldScript : MonoBehaviour
 
     [SerializeField]
     int initialTime;
-
-    GameObject selectedPlayer;
 
     int timer;
     int sizeControl;
@@ -62,7 +62,6 @@ public class WorldScript : MonoBehaviour
 
     void Update()
     {
-        selectedPlayer = (selectedSkin == 0) ? player : player1;
         StateZero();
         CallTheShot();
         timer = initialTime - (int)Time.time;
@@ -96,14 +95,14 @@ public class WorldScript : MonoBehaviour
 
     void CallTheShot()
     {
-        if (gameState != 0) {
+        /*if (gameState != 0) {
             if (timer < -2 && !selectedPlayer.GetComponent<Players>().Hit) { selectedPlayer.GetComponent<Animator>().SetInteger("state", 2); }
 
             if (timer <= -6 && gameState == 1) {
                 if (!selectedPlayer.GetComponent<Players>().Hit) { menu.OpenVictory(true); }
                 if (selectedPlayer.GetComponent<Players>().Hit) { menu.OpenLose(true); }
             }
-        }
+        }*/
     }
 
     public void Roundtwo()
@@ -113,7 +112,7 @@ public class WorldScript : MonoBehaviour
         menu.OpenVictory(false);
         roundText.text = "Round " + round;
         initialTime = (int)(Time.time + 5);
-        selectedPlayer.GetComponent<Players>().RoundReady();
+        //selectedPlayer.GetComponent<Players>().RoundReady();
         ballSpawner.howManyBalls = round * 5;
         ballSpawner.RoundReady();
     }
@@ -125,7 +124,7 @@ public class WorldScript : MonoBehaviour
         menu.OpenLose(false);
         roundText.text = "Round " + round;
         initialTime = (int)(Time.time + 5);
-        selectedPlayer.GetComponent<Players>().RoundReady();
+        //selectedPlayer.GetComponent<Players>().RoundReady();
         ballSpawner.howManyBalls = round * 5;
         ballSpawner.RoundReady();
     }
