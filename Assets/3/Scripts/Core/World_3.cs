@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ID.Player;
 
 namespace ID.Core
 {
     public class World_3 : MonoBehaviour 
     {
-        [SerializeField] float timeBetweenBalls; 
-        float ballsTimer;
-        [SerializeField] int ballsPerRound, ballsDodged;
+        int ballsDodged;
         int round = 0;
         public int Round { get { return round;} }
         public int BallsDodged { get { return ballsDodged;} }
@@ -17,6 +16,7 @@ namespace ID.Core
 
         bool ballsCanSpawn;
         bool playerDown;
+        public bool PlayerDown { get { return playerDown; } }
 
         void Start()
         {
@@ -26,36 +26,11 @@ namespace ID.Core
             Physics.IgnoreLayerCollision(8, 9);
         }
 
-        void Update() 
-        {
-            BallSpawnerTimeControl();
-        }
-
         void StartNewRound()
         {
             round++;
-            ballsCanSpawn = true;
-            GetComponent<BallSpawner_3>().SetAmmountToSpawn( 
+            GetComponent<BallSpawner_3>().SetAmountToSpawn( 
                 GetAmountOfBallsToSpawn());
-        }
-
-        public void StartFirstRound()
-        {
-            round = 0;
-            playerDown = false;
-            GetComponent<BallSpawner_3>().ResetAmountToSpawn();
-            StartCoroutine(WaitUntilNextRound());
-        }
-
-        void BallSpawnerTimeControl()
-        {
-            if (ballsCanSpawn) 
-                if (ballsTimer >= timeBetweenBalls)
-                {
-                    GetComponent<BallSpawner_3>().SpawnNewBall();
-                    ballsTimer = 0;
-                }
-            ballsTimer += Time.deltaTime;
         }
 
         int GetAmountOfBallsToSpawn()
@@ -68,13 +43,12 @@ namespace ID.Core
             if (playerDown) return;
             playerDown = playerHit;
             ballsDodged++;
-            if (ballsDodged == ballsPerRound)
+            if (ballsDodged == GetComponent<BallSpawner_3>().AmountOfBallsToSpawn)
                 EndRound(); 
         }
 
         void EndRound()
         {
-            ballsCanSpawn = false;
             StartCoroutine(WaitUntilNextRound());
         }
 
@@ -83,5 +57,28 @@ namespace ID.Core
             yield return new WaitForSeconds(nextRoundIn);
             StartNewRound();
         }
+
+        public void StartFirstRound(bool resetPlayerStates)
+        {
+            ResetGameStatus();
+            FindObjectOfType<PlayerHomeScreen>().ResetPlayerToRound();
+            EndRound();
+        }
+
+        public void HomeScreen()
+        {
+            ResetGameStatus();
+            FindObjectOfType<PlayerHomeScreen>().ResetPlayerToHome();
+        }
+
+        private void ResetGameStatus()
+        {
+            round = 0;
+            ballsDodged = 0;
+            playerDown = false;
+            GetComponent<BallSpawner_3>().ResetAmountToSpawn();
+            StopAllCoroutines();
+        }
+
     }
 }

@@ -8,10 +8,11 @@ namespace ID.Player
     public class PlayerController : MonoBehaviour 
     {
         float verticalDirection, horizontalMovement;
-        [SerializeField] [Range(10f, 35f)] float jumpForce, gravity; 
-        [SerializeField] [Range(10f, 35f)] float speed;
+        [SerializeField] [Range(10f, 35f)] float jumpForce, gravity;
+        [SerializeField] [Range(10f, 35f)] float movementSpeed;
 
-        bool canMove = true;
+        bool canMove = false;
+        public bool allowMove { get { return canMove; } }
 
         void Update()
         {
@@ -28,9 +29,10 @@ namespace ID.Player
                     verticalDirection = jumpForce;
                     GetComponent<AnimatorControl>().Jump();
                 }
-                horizontalMovement = Input.GetAxis("Horizontal") * speed;
+                horizontalMovement = Input.GetAxis("Horizontal") * movementSpeed;
             }
-            verticalDirection -= gravity * Time.deltaTime;
+            else 
+                verticalDirection -= gravity * Time.deltaTime;
 
             return new Vector3 (horizontalMovement, verticalDirection, 0);
         }
@@ -40,11 +42,23 @@ namespace ID.Player
             return GetComponent<CharacterController>().isGrounded;
         }
 
+        public void CanMove(bool state)
+        {
+            canMove = state;
+        }
+
         public void Hit() 
         {
-            canMove = false;
+            CanMove(false);
+            GetComponent<CharacterController>().enabled = false;
             GetComponent<Animator>().enabled = false;
-            FindObjectOfType<UIScreensController>().OpenGameOverScreen();
+            StartCoroutine(WaitForGameOverScreen());
+        }
+
+        IEnumerator WaitForGameOverScreen()
+        {
+            yield return new WaitForSeconds(3);
+            FindObjectOfType<UIScreenSelector>().OpenScreen(5);
         }
     }
 }

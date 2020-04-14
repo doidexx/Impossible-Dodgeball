@@ -8,9 +8,18 @@ namespace ID.UI
 {
     public class DodgedTextUpdater : MonoBehaviour
     {
-        void Update() 
+        string currentAmount;
+
+        void Update()
         {
-            var dodgedText = FindObjectOfType<World_3>().BallsDodged.ToString();
+            string dodgedText = FindObjectOfType<World_3>().BallsDodged.ToString();
+            if (currentAmount != dodgedText)
+            {
+                IconAnimator IconAnimator = GetComponentInParent<IconAnimator>();
+                if (IconAnimator != null)
+                    GetComponentInParent<IconAnimator>().StartAniamtion();
+                currentAmount = dodgedText;
+            }
             GetComponent<Text>().text = dodgedText;
         }
     }

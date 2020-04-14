@@ -7,13 +7,39 @@ namespace ID.Core
 {
     public class BallSpawner_3 : MonoBehaviour
     {
+        [Header("Settings")]
+        [SerializeField] GameObject ballPrefab; //Serialized for Debug
         int spawnThisManyBalls, spawnedBalls;
+        public int AmountOfBallsToSpawn { get { return spawnThisManyBalls; } }
 
-        [SerializeField] float minX, maxX, minY, maxY, depth;
+        [SerializeField] float timeBetweenSpawns = 2f;
+        float timer;
 
-        [SerializeField] GameObject ballPrefab;
+        [Header("Spawn Point Randomizer Values")]
+        [SerializeField] float minSPX;
+        [SerializeField] float maxSPX;
+        [SerializeField] float minSPY;
+        [SerializeField] float maxSPY;
+        [SerializeField] float depth;
 
-        public void SetAmmountToSpawn(int amount)
+
+        void Update()
+        {
+            SpawnTimerControl();
+        }
+
+        private void SpawnTimerControl()
+        {
+            if (timer >= timeBetweenSpawns && !GetComponent<World_3>().PlayerDown)
+            {
+                if (!AllBallsHaveSpawned())
+                    SpawnNewBall();
+                timer = 0;
+            }
+            timer += Time.deltaTime;
+        }
+
+        public void SetAmountToSpawn(int amount)
         {
             spawnThisManyBalls += amount;
         }
@@ -21,19 +47,42 @@ namespace ID.Core
         public void ResetAmountToSpawn()
         {
             spawnThisManyBalls = 0;
+            spawnedBalls = 0;
+            DestroyAllExistingBalls();
         }
 
         public void SpawnNewBall()
         {
-            if (spawnedBalls >= spawnThisManyBalls) return;
+            if (AllBallsHaveSpawned()) return;
             Instantiate (ballPrefab, GetNewSpawnPoint(), Quaternion.identity);
             spawnedBalls++;
         }
 
+        void DestroyAllExistingBalls()
+        {
+            BallBehavior_3[] balls;
+            balls = FindObjectsOfType<BallBehavior_3>();
+            foreach (BallBehavior_3 ball in balls)
+            {
+                if (ball == null) continue;
+                Destroy(ball.gameObject);
+            }
+        }
+
+        public void ChangePrefabTo(GameObject ball)
+        { 
+            ballPrefab = ball;
+        }
+
+        bool AllBallsHaveSpawned()
+        { 
+            return spawnedBalls >= spawnThisManyBalls;
+        }
+
         Vector3 GetNewSpawnPoint()
         {
-            var randomX = Random.Range(minX, maxX);
-            var randomY = Random.Range(minY, maxY);
+            var randomX = Random.Range(minSPX, maxSPX);
+            var randomY = Random.Range(minSPY, maxSPY);
             return new Vector3(randomX, randomY, depth);
         }
     }

@@ -63,18 +63,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\3\Scripts\BallBehavior_3.cs" />
+    <Compile Include="Assets\3\Prefabs\Balls\HomeScreen\HomeScreenBallBehavior.cs" />
+    <Compile Include="Assets\3\Scripts\Ball\BallBehavior_3.cs" />
     <Compile Include="Assets\3\Scripts\Core\BallSpawner_3.cs" />
+    <Compile Include="Assets\3\Scripts\Core\FollowCamera.cs" />
     <Compile Include="Assets\3\Scripts\Core\Shreder_3.cs" />
     <Compile Include="Assets\3\Scripts\Core\World_3.cs" />
-    <Compile Include="Assets\3\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\3\Scripts\Player\AnimatorControl.cs" />
     <Compile Include="Assets\3\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\3\Scripts\Player\PlayerHomeScreen.cs" />
+    <Compile Include="Assets\3\Scripts\UI\Ball\BallPreviewBehavior.cs" />
+    <Compile Include="Assets\3\Scripts\UI\Ball\BallPreviewSwitcher.cs" />
+    <Compile Include="Assets\3\Scripts\UI\Ball\BallSelectButton.cs" />
+    <Compile Include="Assets\3\Scripts\UI\Ball\BallsMenuButtonBehavior.cs" />
+    <Compile Include="Assets\3\Scripts\UI\Ball\SkinSelectButton.cs" />
     <Compile Include="Assets\3\Scripts\UI\DodgedTextUpdater.cs" />
+    <Compile Include="Assets\3\Scripts\UI\IconAnimator.cs" />
     <Compile Include="Assets\3\Scripts\UI\RoundTextUpdater.cs" />
-    <Compile Include="Assets\3\Scripts\UI\UIScreensController.cs" />
-    <Compile Include="Assets\BallChaserTrigger.cs" />
-    <Compile Include="Assets\Idle_AnimationManager.cs" />
+    <Compile Include="Assets\3\Scripts\UI\SkinsMenuButtonBehavior.cs" />
+    <Compile Include="Assets\3\Scripts\UI\UIScreenSelector.cs" />
     <None Include="Assets\Hand Painted Seamless Wood Texture\Documentation\Documentation.txt" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>D:/Users/doide/Documents/_Gits/Impossible-Dodgeball/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>

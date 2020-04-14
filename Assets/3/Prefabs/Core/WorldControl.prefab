@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8198357672213803689}
   - component: {fileID: 1431788348}
   - component: {fileID: 1431788347}
-  - component: {fileID: 7257072492149625671}
   m_Layer: 0
   m_Name: WorldControl
   m_TagString: Untagged
@@ -48,7 +47,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 263da6854eac8434686b1a7cedd80bfd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -144,10 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496e34b0228aba8479fbdc2781eed110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenBalls: 2
-  ballsPerRound: 0
-  ballsDodged: 0
-  ballsCanSpawn: 0
+  nextRoundIn: 5
 --- !u!114 &8198357672213803689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,13 +156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795a92404d7f9874e9d83fb5c062a15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -30
-  maxX: 30
-  minY: 1
-  maxY: 30
-  depth: 50
   ballPrefab: {fileID: 8878876170927215018, guid: 7399cc01f8477164a8a576a072e2e4a3,
     type: 3}
+  timeBetweenSpawns: 0.2
+  minSPX: -50
+  maxSPX: 50
+  minSPY: 1
+  maxSPY: 25
+  depth: 50
 --- !u!114 &1431788348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,21 +187,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 100, z: 1}
+  m_Size: {x: 200, y: 200, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7257072492149625671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3612643339250665637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0275d8e21e95c0649b2a29135354824b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screens:
-  - {fileID: 7693897482175926612, guid: c3b001e9693dbaf448399832cd800acf, type: 3}
-  - {fileID: 6908759242156514165, guid: 45a2d77e0bb19c54f8057eaaa61af2ef, type: 3}
-  - {fileID: 6291109701034831332, guid: eb4f9679e6d495d4cb4832257fa3de5e, type: 3}

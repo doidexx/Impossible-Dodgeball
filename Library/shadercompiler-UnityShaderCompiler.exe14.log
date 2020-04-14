@@ -1,34 +1,4 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=8630 outsize=6417 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=10384 outsize=743141 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=40246 outsize=34940 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=40246 outsize=1522 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=22295 outsize=15432 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=5168 outsize=1297 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=10338 outsize=3581 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=15784 outsize=55102 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=15784 outsize=48950 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=15784 outsize=66593 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=6258 outsize=4935 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=26999 outsize=3476 ok=1
-Cmd: initializeCompiler
-Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=18731 outsize=8653 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=1864 outsize=1385 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=5591 outsize=6437 ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1602 outsize=4982 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL SHADOWS_SCREEN LIGHTPROBE_SH _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECULARHIGHLIGHTS_OFF _GLOSSYREFLECTIONS_OFF pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
