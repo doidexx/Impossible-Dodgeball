@@ -234,23 +234,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1096926604, guid: 60f72d983553f534a91c836e75392523, type: 3}
+    - target: {fileID: 2528520578406036026, guid: 60f72d983553f534a91c836e75392523,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1976958523}
-    - target: {fileID: 1296497173, guid: 60f72d983553f534a91c836e75392523, type: 3}
+    - target: {fileID: 2528520578605714851, guid: 60f72d983553f534a91c836e75392523,
+        type: 3}
       propertyPath: characterPreview
       value: 
       objectReference: {fileID: 1898818361}
-    - target: {fileID: 1406520503, guid: 60f72d983553f534a91c836e75392523, type: 3}
+    - target: {fileID: 2528520578648218264, guid: 60f72d983553f534a91c836e75392523,
+        type: 3}
       propertyPath: characterPreview
       value: 
       objectReference: {fileID: 1898818361}
-    - target: {fileID: 1407085870, guid: 60f72d983553f534a91c836e75392523, type: 3}
+    - target: {fileID: 2528520578648521473, guid: 60f72d983553f534a91c836e75392523,
+        type: 3}
       propertyPath: characterPreview
       value: 
       objectReference: {fileID: 1898818361}
-    - target: {fileID: 1772051758, guid: 60f72d983553f534a91c836e75392523, type: 3}
+    - target: {fileID: 2528520579088558744, guid: 60f72d983553f534a91c836e75392523,
+        type: 3}
       propertyPath: characterPreview
       value: 
       objectReference: {fileID: 1898818361}
