@@ -9,11 +9,9 @@ namespace ID.Core
     {
         void OnCollisionEnter(Collision other)
         {
-            BallBehavior BB = other.transform.GetComponent<BallBehavior>();
-            if (BB != null)
-            {
-                BB.DestroyMe();
-            }
+            BallBehavior ball = other.transform.GetComponent<BallBehavior>();
+            if (ball != null)
+                ball.gameObject.SetActive(false);
         }
     }
 }

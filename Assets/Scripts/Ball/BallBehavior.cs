@@ -6,14 +6,14 @@ using ID.Player;
 
 namespace ID.Ball
 {
-    public class BallBehavior : MonoBehaviour 
+    public class BallBehavior : MonoBehaviour
     {
-        [SerializeField] BallTarget target;
+        BallTarget target;
 
         [Header("Settings")]
         [SerializeField] float impulseForce;
         [SerializeField] float chasingForce;
-        [SerializeField] float lifeTime = 5f;
+        [SerializeField] float lifeTime = 4f;
         [SerializeField] float distanceToChase;
 
         [Header("Launch Direction Offset")]
@@ -23,56 +23,62 @@ namespace ID.Ball
 
         bool collided;
 
-        void Start() 
+        Rigidbody rb;
+
+        void OnEnable()
         {
+            lifeTimer = 0;
             target = FindObjectOfType<BallTarget>();
-            GetComponent<Rigidbody>().AddForce(GetRandomizedDirection() * impulseForce, ForceMode.Impulse);
+            rb = GetComponent<Rigidbody>();
+            GetComponent<TrailRenderer>().emitting = true;
+            rb.isKinematic = false;
+            rb.AddForce(GetTargetDirectionOffset() * impulseForce, ForceMode.Impulse);
         }
 
-        void Update() 
+        void Update()
         {
             lifeTimer += Time.deltaTime;
-            if (lifeTimer >= lifeTime) DestroyMe();
-            
+            if (lifeTimer >= lifeTime) 
+                gameObject.SetActive(false);
+
             if (!collided && GetInRange())
                 ChaseTarget();
         }
 
-        Vector3 GettargetDirection()
+        Vector3 GetTargetDirection()
         {
             return (target.transform.position - transform.position).normalized;
         }
 
-        Vector3 GetRandomizedDirection()
-        {   
-            Vector3 randomizer = target.transform.position + new Vector3 (Random.Range(-horizontalOffset, horizontalOffset), Random.Range(0, verticalOffset), 0);
+        Vector3 GetTargetDirectionOffset()
+        {
+            Vector3 randomizer = target.transform.position + new Vector3(Random.Range(-horizontalOffset, horizontalOffset), Random.Range(-verticalOffset / 2, verticalOffset), 0);
             return (randomizer - transform.position).normalized;
         }
 
         void ChaseTarget()
         {
-            GetComponent<Rigidbody>().AddForce(GettargetDirection() * chasingForce * Time.deltaTime);
+            rb.AddForce(GetTargetDirection() * chasingForce * Time.deltaTime);
         }
 
-        bool GetInRange() 
+        bool GetInRange()
         {
             return (Vector3.Distance(target.transform.position, transform.position) < distanceToChase);
         }
 
-        public void DestroyMe()
+        void OnDisable()
         {
-            Destroy(this.gameObject);
-            FindObjectOfType<WorldController>().AddToBallsDodged(false);
+            rb.isKinematic = true;
+            GetComponent<TrailRenderer>().emitting = false;
+            FindObjectOfType<WorldController>().AddToDodgedBalls();
         }
 
         void OnCollisionEnter(Collision other)
         {
             collided = true;
-            if (other.transform.CompareTag("Player"))
-            {
-                FindObjectOfType<WorldController>().AddToBallsDodged(true);
-                target.GetComponentInParent<PlayerController>().Hit();
-            }
+            PlayerController player = other.gameObject.GetComponentInParent<PlayerController>();
+            if (player == null) return;
+            player.Hit();
         }
     }
 }

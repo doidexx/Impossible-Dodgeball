@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using ID.Player;
 
 namespace ID.Core
@@ -8,7 +9,7 @@ namespace ID.Core
     {
         public bool canStart = false;
         [SerializeField] float secondsBeforeNextRound = 15f;
-        [SerializeField] Text timerBetweenRounds;
+        [SerializeField] TextMeshProUGUI timerBetweenRounds;
         float timer = 1f;
 
 
@@ -19,11 +20,14 @@ namespace ID.Core
         private void LateUpdate()
         {
             if (!canStart) return;
+            
             timer -= Time.deltaTime;
+
             if (timer <= 0f)
             {
                 GetComponent<WorldController>().StartNewRound();
             }
+
             else if (timer < 0.6f)
                 timerBetweenRounds.gameObject.SetActive(false);
 
@@ -35,6 +39,7 @@ namespace ID.Core
                 congratulations.gameObject.SetActive(false);
                 fireworks.Activate(false);
             }
+
             else if (timer > 5f)
             {
                 if (GetComponent<WorldController>().Round != 0)
@@ -43,11 +48,13 @@ namespace ID.Core
                     congratulations.gameObject.SetActive(true);
                     fireworks.Activate(true);
                 }
+
                 else if (timer < 12f && timer > 7f)
                 {
                     timerBetweenRounds.gameObject.SetActive(true);
                     timerBetweenRounds.text = timer.ToString("Get Ready!");
                 }
+
                 else
                     timerBetweenRounds.gameObject.SetActive(false);
             }
@@ -56,6 +63,8 @@ namespace ID.Core
         public void ResetTimer()
         {
             timer = secondsBeforeNextRound;
+            canStart = false;
+            congratulations.SetActive(false);
         }
     }
 }

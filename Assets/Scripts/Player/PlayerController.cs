@@ -6,15 +6,23 @@ using ID.Core;
 
 namespace ID.Player
 {
-    public class PlayerController : MonoBehaviour 
+    public class PlayerController : MonoBehaviour
     {
         float verticalDirection, horizontalMovement;
+        public float HorizontalMovement { get { return horizontalMovement; } }
+        
         [SerializeField] [Range(10f, 35f)] float jumpForce, gravity;
         [SerializeField] [Range(10f, 35f)] float movementSpeed;
-        [SerializeField] [Range(0, 10)]int numberOfDances;
+
+        [SerializeField] Joystick joystick;
 
         bool canMove = false;
         public bool allowMove { get { return canMove; } }
+
+        bool touchStart = false;
+        bool jumping = false;
+
+        Vector2 positionA, positionB;
 
         void Update()
         {
@@ -32,15 +40,31 @@ namespace ID.Player
         {
             if (GetCharacterGrounded())
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                    GetComponent<AnimatorControl>().Jump();
+                if (!jumping)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                        JumpTouchButton();
 
-                horizontalMovement = Input.GetAxis("Horizontal") * movementSpeed;
+                    if (joystick.Horizontal >= .4f)
+                        horizontalMovement = movementSpeed;
+
+                    else if (joystick.Horizontal <= -.4f)
+                        horizontalMovement = -movementSpeed;
+
+                    else
+                        horizontalMovement = joystick.Horizontal;
+                }
             }
-            else 
+            else
                 verticalDirection -= gravity * Time.deltaTime;
 
-            return new Vector3 (horizontalMovement, verticalDirection, 0);
+            return new Vector3(horizontalMovement, verticalDirection, 0);
+        }
+
+        public void JumpTouchButton()
+        {
+            jumping = true;
+            GetComponent<AnimatorControl>().Jump();
         }
 
         //Animation Event
@@ -49,8 +73,10 @@ namespace ID.Player
             verticalDirection = jumpForce;
         }
 
+        //Animation Event
         public void Land()
         {
+            jumping = false;
             GetComponent<Animator>().ResetTrigger("Jump");
         }
 
@@ -64,7 +90,7 @@ namespace ID.Player
             canMove = state;
         }
 
-        public void Hit() 
+        public void Hit()
         {
             CanMove(false);
             GetComponent<CharacterController>().enabled = false;
@@ -81,22 +107,11 @@ namespace ID.Player
 
         public void Dance(bool d)
         {
-            if (d)
-            {
-                if (!GetComponent<Animator>().GetBool("Dancing") && GetCharacterGrounded())
-                {
-                    int danceMove = (int)Random.Range(0, numberOfDances - 1);
-                    GetComponent<Animator>().SetBool("Dancing", d);
-                    GetComponent<Animator>().SetInteger("Dance", danceMove);
-                    CanMove(false);
-                } 
-            }
+            if (d && GetCharacterGrounded())
+                CanMove(false);
             else
-            {
-                    GetComponent<Animator>().SetBool("Dancing", d);
-                    CanMove(true);
-
-            }
+                CanMove(true);
+            GetComponent<AnimatorControl>().Dance(d);
         }
     }
 }

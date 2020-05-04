@@ -146,8 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highRound: 0
   highScore: 0
-  secondsBeforeNextRound: 15
-  timerBetweenRounds: {fileID: 0}
 --- !u!114 &8198357672213803689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,9 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795a92404d7f9874e9d83fb5c062a15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 8878876170927215018, guid: 7399cc01f8477164a8a576a072e2e4a3,
-    type: 3}
-  timeBetweenSpawns: 0.2
+  timeBetweenSpawns: 0.12
   minSPX: -50
   maxSPX: 50
   minSPY: 1

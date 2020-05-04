@@ -109,16 +109,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 92803206589328677, guid: 745515fd381998545a2be6611e8f0261,
-        type: 3}
-      propertyPath: field of view
-      value: 59
-      objectReference: {fileID: 0}
-    - target: {fileID: 92803206589328677, guid: 745515fd381998545a2be6611e8f0261,
-        type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 92803206589328699, guid: 745515fd381998545a2be6611e8f0261,
         type: 3}
       propertyPath: m_Name

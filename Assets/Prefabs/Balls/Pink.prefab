@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1925148578ec6f40a6bb2e975c82c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   impulseForce: 100
   chasingForce: 60000
   lifeTime: 3
@@ -279,7 +278,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.2
+  m_Time: 0.12
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

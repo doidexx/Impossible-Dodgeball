@@ -20,12 +20,16 @@ namespace ID.Core
         bool playerDown;
         public bool PlayerDown { get { return playerDown; } }
 
+        BallSpawner ballSpawner;
+
         void Start()
         {
             // Ignore collision between character controller and ball
             Physics.IgnoreLayerCollision(8, 10);
             // Ignore collision between character controller and ragdoll
             Physics.IgnoreLayerCollision(8, 9);
+
+            ballSpawner = GetComponent<BallSpawner>();
 
             highScore = PlayerPrefs.GetInt("HighScore");
             highRound = PlayerPrefs.GetInt("HighRound");
@@ -42,22 +46,21 @@ namespace ID.Core
         public void StartNewRound()
         {
             round++;
-            GetComponent<BallSpawner>().SetAmountToSpawn(
+            ballSpawner.SetAmountToSpawn(
                 GetAmountOfBallsToSpawn());
             startCountDown = false;
         }
 
         int GetAmountOfBallsToSpawn()
         {
-            return round * (int)UnityEngine.Random.Range(10, 30);
+            return round * (int)Random.Range(15, 30);
         }
 
-        public void AddToBallsDodged(bool playerHit)
+        public void AddToDodgedBalls()
         {
-            if (playerDown) return;
-            playerDown = playerHit;
+            if (playerDown || round == 0) return;
             ballsDodged++;
-            if (ballsDodged == GetComponent<BallSpawner>().AmountOfBallsToSpawn)
+            if (ballsDodged == ballSpawner.AmountOfBallsToSpawn)
                 EndRound();
         }
 
@@ -70,14 +73,16 @@ namespace ID.Core
         public void StartFirstRound(bool resetPlayerStates)
         {
             ResetGameStatus();
-            FindObjectOfType<PlayerHomeScreen>().ResetPlayerToNewRound();
+            FindObjectOfType<ResettingHandler>().ResetPlayerToNewRound();
             EndRound();
         }
 
         public void HomeScreen()
         {
             ResetGameStatus();
-            FindObjectOfType<PlayerHomeScreen>().ResetPlayerToHome();
+            FindObjectOfType<Fireworks>().Activate(false);
+            GetComponent<RoundTimer>().ResetTimer();
+            FindObjectOfType<ResettingHandler>().ResetPlayerToHome();
             startCountDown = false;
         }
 
@@ -86,7 +91,7 @@ namespace ID.Core
             round = 0;
             ballsDodged = 0;
             playerDown = false;
-            GetComponent<BallSpawner>().ResetAmountToSpawn();
+            ballSpawner.ResetAmountToSpawn();
             StopAllCoroutines();
         }
 

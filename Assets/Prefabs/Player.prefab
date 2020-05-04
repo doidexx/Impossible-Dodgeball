@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1914380016182063117}
   - component: {fileID: 2211566154682698931}
   - component: {fileID: 2211566154682698932}
-  - component: {fileID: 2211566154682698938}
+  - component: {fileID: 1892264345410306842}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -116,13 +116,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.23
+  m_Height: 3.69
+  m_Radius: 0.44
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!114 &1914380016182063117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   jumpForce: 22.8
   gravity: 35
   movementSpeed: 12
-  numberOfDances: 5
+  joystick: {fileID: 0}
 --- !u!54 &2211566154682698931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,7 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174dea6f2dd57064eb06039777c248de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2211566154682698938
+  numberOfDances: 5
+--- !u!114 &1892264345410306842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5012266273776571665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32953f2deafe85b4fb85de7d4cbc8a3e, type: 3}
+  m_Script: {fileID: 11500000, guid: ec904ee03e821134dbec6dddb880149b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1411130122

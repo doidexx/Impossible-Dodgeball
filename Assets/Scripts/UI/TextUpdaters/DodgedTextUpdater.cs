@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using ID.Core;
 
 namespace ID.UI
@@ -17,19 +18,15 @@ namespace ID.UI
             if (!highScore)
             {
                 string dodgedText = FindObjectOfType<WorldController>().BallsDodged.ToString();
+
                 if (currentAmount != dodgedText)
-                {
-                    IconAnimator IconAnimator = GetComponentInParent<IconAnimator>();
-                    if (IconAnimator != null)
-                        GetComponentInParent<IconAnimator>().StartAniamtion();
                     currentAmount = dodgedText;
-                }
-                GetComponent<Text>().text = dodgedText;
+
+                GetComponent<TextMeshProUGUI>().text = dodgedText;
             }
+            
             else
-            {
-                GetComponent<Text>().text = FindObjectOfType<WorldController>().highScore.ToString();
-            }
+                GetComponent<TextMeshProUGUI>().text = FindObjectOfType<WorldController>().highScore.ToString();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace ID.UI
         [SerializeField] GameObject HighScoresScreen;
 
         [Header("Previews")]
-        [SerializeField] BallPreviewBehavior ballPreview;
+        [SerializeField] GameObject ballPreview;
         [SerializeField] GameObject skinPreview;
         [SerializeField] GameObject homeScreenBall;
 

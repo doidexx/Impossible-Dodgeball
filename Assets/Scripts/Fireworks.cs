@@ -8,6 +8,7 @@ public class Fireworks : MonoBehaviour
     [SerializeField] VisualEffect visualEffect;
 
     bool isPlaying = false;
+
     public void Activate(bool a)
     {
         if (a)
@@ -15,7 +16,6 @@ public class Fireworks : MonoBehaviour
             if (!isPlaying)
             {
                 visualEffect.Play();
-                //visualEffect.SendEvent("Play");
                 isPlaying = true;
             }
         }
@@ -23,7 +23,6 @@ public class Fireworks : MonoBehaviour
         else
         {
             visualEffect.Stop();
-            //visualEffect.SendEvent("Stop");
             isPlaying = false;
         }
     }

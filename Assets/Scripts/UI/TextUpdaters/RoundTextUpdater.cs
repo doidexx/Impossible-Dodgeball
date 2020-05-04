@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using ID.Core;
 
 namespace ID.UI
@@ -18,18 +19,11 @@ namespace ID.UI
             {
                 string roundText = FindObjectOfType<WorldController>().Round.ToString();
                 if (currentRound != roundText)
-                {
-                    IconAnimator IconAnimator = GetComponentInParent<IconAnimator>();
-                    if (IconAnimator != null)
-                        GetComponentInParent<IconAnimator>().StartAniamtion();
                     currentRound = roundText;
-                }
-                GetComponent<Text>().text = roundText;
+                GetComponent<TextMeshProUGUI>().text = roundText;
             }
             else
-            {
-                GetComponent<Text>().text = FindObjectOfType<WorldController>().highRound.ToString();
-            }
+                GetComponent<TextMeshProUGUI>().text = FindObjectOfType<WorldController>().highRound.ToString();
         }
     }
 }
