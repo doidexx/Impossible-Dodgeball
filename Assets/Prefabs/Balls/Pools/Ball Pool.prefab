@@ -40,8 +40,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6336375182602271740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d10cba8eb8c6f9a4db8180b27af8fa06, type: 3}
+  m_Script: {fileID: 11500000, guid: eec95addc7b87504ba4fe65e48373a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 8878876170927215018, guid: 7399cc01f8477164a8a576a072e2e4a3, type: 3}
+  poolName: 0
+  ball: {fileID: 0}
   amountToPreSpawn: 30

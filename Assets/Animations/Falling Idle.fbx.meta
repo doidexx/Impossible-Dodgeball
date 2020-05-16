@@ -60,9 +60,9 @@ ModelImporter:
       curves: []
       events:
       - time: 0.25615764
-        functionName: Land
+        functionName: OnLand
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 4c7ebc3fd6456af448241d1c3ca551b5,
+        objectReferenceParameter: {fileID: 11500000, guid: 8bc81e1581bf3c449b5e1dfac2490b4d,
           type: 3}
         floatParameter: 0
         intParameter: 0

@@ -1,29 +1,27 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - BallPool
-    - BallTarget
+    - AnimationController
+    - BallBehavior
+    - BallPools
+    - BallPreviewSwitcher
+    - BallSelection
+    - Ball_Spawner
     - EdgeLights
     - Fireworks
     - FixedJoystick
     - FollowCamera
+    - GameManager
     - HomeScreenBallBehavior
-    - ID.Ball.BallBehavior
     - ID.Ball.BallPreviewBehavior
-    - ID.Core.BallSpawner
-    - ID.Core.RoundTimer
-    - ID.Core.Shreder
-    - ID.Core.WorldController
-    - ID.Player.AnimatorControl
-    - ID.Player.PlayerController
-    - ID.Player.ResettingHandler
-    - ID.UI.BallPreviewSwitcher
-    - ID.UI.BallSelection
-    - ID.UI.DodgedTextUpdater
     - ID.UI.IconAnimator
-    - ID.UI.RoundTextUpdater
     - ID.UI.SkinSelection
-    - ID.UI.UIScreenSelector
+    - PlayerMover
+    - Player_Controller
+    - RoundCountDown
+    - Shredder
+    - UIManager
+    - UISwitchBehavior
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -73,6 +71,36 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
+    Unity.VisualEffectGraph.Editor.dll:
+    - UnityEditor.VFX.Block.AttributeFromCurve
+    - UnityEditor.VFX.Block.Drag
+    - UnityEditor.VFX.Block.GPUEventAlways
+    - UnityEditor.VFX.Block.GPUEventOnDie
+    - UnityEditor.VFX.Block.GPUEventRate
+    - UnityEditor.VFX.Block.Gravity
+    - UnityEditor.VFX.Block.Orient
+    - UnityEditor.VFX.Block.PositionLine
+    - UnityEditor.VFX.Block.SetAttribute
+    - UnityEditor.VFX.Block.VelocityRandomize
+    - UnityEditor.VFX.UI.VFXGraphUndoCursor
+    - UnityEditor.VFX.UI.VFXViewWindow
+    - UnityEditor.VFX.VFXBasicGPUEvent
+    - UnityEditor.VFX.VFXBasicInitialize
+    - UnityEditor.VFX.VFXBasicSpawner
+    - UnityEditor.VFX.VFXBasicUpdate
+    - UnityEditor.VFX.VFXDataParticle
+    - UnityEditor.VFX.VFXGraph
+    - UnityEditor.VFX.VFXPlanarPrimitiveOutput
+    - UnityEditor.VFX.VFXResources
+    - UnityEditor.VFX.VFXSlot
+    - UnityEditor.VFX.VFXSlotFloat
+    - UnityEditor.VFX.VFXSlotFloat3
+    - UnityEditor.VFX.VFXSlotGradient
+    - UnityEditor.VFX.VFXSlotTexture2D
+    - UnityEditor.VFX.VFXSlotUint
+    - UnityEditor.VFX.VFXSlotVector
+    - UnityEditor.VFX.VFXSpawnerConstantRate
+    - UnityEditor.VFX.VFXUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -155,159 +183,155 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11654}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11674}
     - Class: 114
-      Script: {instanceID: 11666}
+      Script: {instanceID: 11712}
     - Class: 114
-      Script: {instanceID: 11734}
+      Script: {instanceID: 11726}
     - Class: 114
-      Script: {instanceID: 11736}
+      Script: {instanceID: 11838}
     - Class: 114
-      Script: {instanceID: 11864}
+      Script: {instanceID: 11856}
     - Class: 114
-      Script: {instanceID: 11878}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 11906}
+      Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11940}
     - Class: 114
-      Script: {instanceID: 11958}
+      Script: {instanceID: 11942}
+    - Class: 114
+      Script: {instanceID: 11954}
+    - Class: 114
+      Script: {instanceID: 12020}
     - Class: 114
       Script: {instanceID: 12024}
     - Class: 114
-      Script: {instanceID: 12028}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 12162}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12236}
     - Class: 114
-      Script: {instanceID: 12240}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 12362}
     - Class: 114
-      Script: {instanceID: 12366}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12412}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12722}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 12770}
     - Class: 114
-      Script: {instanceID: 12774}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 12848}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 12910}
+      Script: {instanceID: 13070}
     - Class: 114
-      Script: {instanceID: 13010}
+      Script: {instanceID: 13076}
     - Class: 114
-      Script: {instanceID: 13080}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13082}
+      Script: {instanceID: 13138}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13378}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13380}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13430}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 13494}
     - Class: 114
-      Script: {instanceID: 13602}
+      Script: {instanceID: 13600}
     - Class: 114
-      Script: {instanceID: 13612}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13794}
+      Script: {instanceID: 13792}
     - Class: 114
-      Script: {instanceID: 13830}
+      Script: {instanceID: 13828}
     - Class: 114
-      Script: {instanceID: 13912}
+      Script: {instanceID: 13910}
     - Class: 114
-      Script: {instanceID: 13934}
+      Script: {instanceID: 13932}
     - Class: 114
-      Script: {instanceID: 13948}
+      Script: {instanceID: 13946}
     - Class: 114
-      Script: {instanceID: 13976}
+      Script: {instanceID: 13974}
     - Class: 114
-      Script: {instanceID: 14002}
+      Script: {instanceID: 14000}
     - Class: 114
-      Script: {instanceID: 14036}
+      Script: {instanceID: 14142}
     - Class: 114
-      Script: {instanceID: 14146}
+      Script: {instanceID: 14248}
     - Class: 114
-      Script: {instanceID: 14252}
+      Script: {instanceID: 14328}
     - Class: 114
-      Script: {instanceID: 14332}
+      Script: {instanceID: 14408}
     - Class: 114
       Script: {instanceID: 14412}
     - Class: 114
-      Script: {instanceID: 14416}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 14434}
+      Script: {instanceID: 14436}
     - Class: 114
-      Script: {instanceID: 14440}
+      Script: {instanceID: 14544}
     - Class: 114
-      Script: {instanceID: 14548}
+      Script: {instanceID: 14580}
     - Class: 114
-      Script: {instanceID: 14584}
+      Script: {instanceID: 14616}
     - Class: 114
-      Script: {instanceID: 14620}
+      Script: {instanceID: 14624}
     - Class: 114
-      Script: {instanceID: 14628}
+      Script: {instanceID: 14856}
     - Class: 114
-      Script: {instanceID: 14860}
+      Script: {instanceID: 14886}
     - Class: 114
-      Script: {instanceID: 14890}
+      Script: {instanceID: 14978}
     - Class: 114
-      Script: {instanceID: 14982}
+      Script: {instanceID: 14996}
     - Class: 114
-      Script: {instanceID: 15000}
+      Script: {instanceID: 15058}
     - Class: 114
-      Script: {instanceID: 15062}
+      Script: {instanceID: 15162}
     - Class: 114
-      Script: {instanceID: 15304}
+      Script: {instanceID: 15300}
     - Class: 114
-      Script: {instanceID: 15374}
+      Script: {instanceID: 15370}
     - Class: 114
-      Script: {instanceID: 15428}
+      Script: {instanceID: 15424}
     - Class: 114
-      Script: {instanceID: 15586}
+      Script: {instanceID: 15474}
     - Class: 114
-      Script: {instanceID: 15652}
+      Script: {instanceID: 15584}
     - Class: 114
-      Script: {instanceID: 15732}
+      Script: {instanceID: 15650}
     - Class: 114
-      Script: {instanceID: 15746}
+      Script: {instanceID: 15896}
     - Class: 114
-      Script: {instanceID: 15900}
+      Script: {instanceID: 15898}
     - Class: 114
-      Script: {instanceID: 15902}
+      Script: {instanceID: 15936}
     - Class: 114
-      Script: {instanceID: 15922}
+      Script: {instanceID: 15954}
     - Class: 114
-      Script: {instanceID: 15942}
+      Script: {instanceID: 15962}
     - Class: 114
-      Script: {instanceID: 15960}
+      Script: {instanceID: 15966}
     - Class: 114
-      Script: {instanceID: 15968}
+      Script: {instanceID: 16064}
     - Class: 114
-      Script: {instanceID: 15972}
+      Script: {instanceID: 16092}
     - Class: 114
-      Script: {instanceID: 15974}
+      Script: {instanceID: 16114}
     - Class: 114
-      Script: {instanceID: 16072}
-    - Class: 114
-      Script: {instanceID: 16100}
-    - Class: 114
-      Script: {instanceID: 16122}
-    - Class: 114
-      Script: {instanceID: 16128}
-    - Class: 114
-      Script: {instanceID: 29398}
+      Script: {instanceID: 16120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -320,15 +344,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
-    - Class: 143
-      Script: {instanceID: 0}
     - Class: 144
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -361,18 +381,6 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: e80b0ae60fafa9c0fff23f3471240b9a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.UI
-    className: DodgedTextUpdater
-  - hash:
-      serializedVersion: 2
-      Hash: 87bc82389a234ed9926dcfee65a340b3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Core
-    className: BallSpawner
-  - hash:
-      serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -397,10 +405,22 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoundCountDown
+  - hash:
+      serializedVersion: 2
       Hash: 626925ef558787b2d85c809198164d19
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 4a1105a126250e9abd097494fddee297
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: b7d58df3c6d92c60e3611c0a808aa0dc
@@ -409,10 +429,10 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerBitField
   - hash:
       serializedVersion: 2
-      Hash: d6db5517c3af48294ecd282f7f54b5c5
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Core
-    className: WorldController
+    namespaceName: 
+    className: Shredder
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -425,6 +445,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HomeScreenBallBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
       Hash: 9ac327467393cb6c8045a2fd90ff67e2
@@ -443,6 +469,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f9759005c03b2529580a8c945581ab5c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationController
   - hash:
       serializedVersion: 2
       Hash: 5fcd6c83f4b9ef27fbcf701cc39abb93
@@ -583,10 +615,10 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: b2a18e0fd398a06ed9cbe24255337288
+      Hash: 94063ee1a69680641fe0f455dd460d4d
     assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.UI
-    className: UIScreenSelector
+    namespaceName: 
+    className: UIManager
   - hash:
       serializedVersion: 2
       Hash: bc15209ab07e93e67c02c130da671410
@@ -691,12 +723,6 @@ ScriptsOnlyBuild:
     className: UIFoldout
   - hash:
       serializedVersion: 2
-      Hash: e80b0ae60fafa9c0fff23f3471240b9a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.UI
-    className: RoundTextUpdater
-  - hash:
-      serializedVersion: 2
       Hash: 4927500d4bedc3acdda16387bb141c2d
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
@@ -727,10 +753,10 @@ ScriptsOnlyBuild:
     className: VFXPositionBinder
   - hash:
       serializedVersion: 2
-      Hash: a6adec12cd0d07aa607659575d07b809
+      Hash: 5ceffe351793fe1e70b69a674721e7d2
     assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Core
-    className: RoundTimer
+    namespaceName: 
+    className: Player_Controller
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -749,6 +775,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: edf139084bce13b0e41870d8b0d84ba0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ball_Spawner
   - hash:
       serializedVersion: 2
       Hash: 5e1eefcd5106de6c2e85908a3b2d3f04
@@ -779,6 +811,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerIndirectToggle
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UISwitchBehavior
   - hash:
       serializedVersion: 2
       Hash: 51b05e403ce1da1805851f42af02f4bb
@@ -831,7 +869,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 575f8abfabd351fc08fdf00253dcf54d
     assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.UI
+    namespaceName: 
     className: BallPreviewSwitcher
   - hash:
       serializedVersion: 2
@@ -859,9 +897,9 @@ ScriptsOnlyBuild:
     className: Fireworks
   - hash:
       serializedVersion: 2
-      Hash: f8768370f6d3b9681fa4ba79a057cabb
+      Hash: 3ba42e0e0e7022c7afca90f18042f8d7
     assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Ball
+    namespaceName: 
     className: BallBehavior
   - hash:
       serializedVersion: 2
@@ -929,12 +967,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerWidget
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Core
-    className: Shreder
   - hash:
       serializedVersion: 2
       Hash: d57f1a3f522cf512849faec5b4d077c9
@@ -1159,6 +1191,12 @@ ScriptsOnlyBuild:
     className: CinemachineUniversalPixelPerfect
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMover
+  - hash:
+      serializedVersion: 2
       Hash: 19209916e2ccd9325109364cfb90fb0d
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
@@ -1231,6 +1269,12 @@ ScriptsOnlyBuild:
     className: VFXMouseEventBinder
   - hash:
       serializedVersion: 2
+      Hash: 4d67258a2b89e280b9a6a0b58111eabb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BallPools
+  - hash:
+      serializedVersion: 2
       Hash: c5bfd0f6f4664318b8b9f50d88408421
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
@@ -1277,18 +1321,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
     className: VFXUIToggleBinder
-  - hash:
-      serializedVersion: 2
-      Hash: 26c9020ef29ac4ab8445938fa97a2516
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BallPool
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BallTarget
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1369,12 +1401,6 @@ ScriptsOnlyBuild:
     className: VFXVisibilityEventBinder
   - hash:
       serializedVersion: 2
-      Hash: a6fbfec569f80f055febb3bb33d972fc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Player
-    className: PlayerController
-  - hash:
-      serializedVersion: 2
       Hash: ca0b8ad3987cd33b3209a508b6e1562e
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
@@ -1403,12 +1429,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
-  - hash:
-      serializedVersion: 2
-      Hash: f9759005c03b2529580a8c945581ab5c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Player
-    className: AnimatorControl
   - hash:
       serializedVersion: 2
       Hash: 1f0602e7bad1e0a9cba31ce292eee8bb
@@ -1447,9 +1467,9 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: f7e4f7614ed3662293d92a75dfb0c820
+      Hash: e20935410aabec124108abb96babe421
     assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.UI
+    namespaceName: 
     className: BallSelection
   - hash:
       serializedVersion: 2
@@ -1493,13 +1513,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
     className: VFXUISliderBinder
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ID.Player
-    className: ResettingHandler
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/doide/Desktop/Imposible-Dodgeball-BuildTest1.apk
+  playerPath: D:/Users/doide/Documents/UnityBuilds/Imposible-Dodgeball.apk

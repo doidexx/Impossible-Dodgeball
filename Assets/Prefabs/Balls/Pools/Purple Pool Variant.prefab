@@ -10,14 +10,19 @@ PrefabInstance:
     - target: {fileID: 6336375182602271740, guid: d171118d61604fa49a4851d8ee8955b2,
         type: 3}
       propertyPath: m_Name
-      value: Purple Pool
+      value: Purple Pool Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6336375182602271741, guid: d171118d61604fa49a4851d8ee8955b2,
         type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 8878876170927215018, guid: d11afd42941ae3f499906f0995ae7081,
+      objectReference: {fileID: 1816768815409279, guid: 5c0c53c766f931443865e4073ae798ca,
         type: 3}
+    - target: {fileID: 6336375182602271741, guid: d171118d61604fa49a4851d8ee8955b2,
+        type: 3}
+      propertyPath: poolName
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6336375182602271742, guid: d171118d61604fa49a4851d8ee8955b2,
         type: 3}
       propertyPath: m_LocalPosition.x

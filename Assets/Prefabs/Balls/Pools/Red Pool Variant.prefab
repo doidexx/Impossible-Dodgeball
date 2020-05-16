@@ -10,8 +10,14 @@ PrefabInstance:
     - target: {fileID: 6336375182602271740, guid: d171118d61604fa49a4851d8ee8955b2,
         type: 3}
       propertyPath: m_Name
-      value: Ball Pool (1)
+      value: Red Pool Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6336375182602271741, guid: d171118d61604fa49a4851d8ee8955b2,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1816768815409279, guid: ef6c5cbcd01fdb14390a0e700b622ad9,
+        type: 3}
     - target: {fileID: 6336375182602271742, guid: d171118d61604fa49a4851d8ee8955b2,
         type: 3}
       propertyPath: m_LocalPosition.x
